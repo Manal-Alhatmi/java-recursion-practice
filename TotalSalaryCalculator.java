@@ -27,34 +27,10 @@ class Employee {
     public String getName() {
         return name;
     }
-    public static void main(String[] args){
-        Employee man=new Employee("manal",6000);
-        Employee e1=new Employee("sara",600);
-        Employee e2=new Employee("mulk",500);
-
-        man.addSubordinate(e1);
-        man.addSubordinate(e2);
-
-
-        Organization org=new Organization();
-        System.out.println(org.calculateTotalSalary(man));
-
-    }
 
 }
 
 class Organization {
-
-    /**
-     * TO-DO: Convert this iterative method into a recursive one.
-     * \*
-     * This method calculates the total salary of a manager and all their subordinates.
-     * The current implementation uses a Stack to perform a depth-first traversal of the hierarchy.
-     * \*
-     *
-     * @param manager The root employee of the hierarchy to sum up.
-     * @return The total salary.
-     */
     public double calculateTotalSalary(Employee manager) {
         if(manager.getSubordinates().isEmpty()){
             return manager.getSalary();
